@@ -3,10 +3,10 @@
 	width: 20em;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #484840;
+	background: #484840;
 }
 
-p
+p, h1
 {
 	text-align: center;
 	font-family: sans-serif;
@@ -19,14 +19,18 @@ table
 	margin-right: auto;
 }
 
+
 .win
 {
-	margin: 0.2em;
-	padding: 2em;
-	background-color: #000;
-}
+	cursor: pointer;
 
-.win:hover
-{
-	background-color: #e6e65c;
+	padding: 2em;
+	margin-right: 0.2em;
+	margin-left: 0.2em;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+	background: #000;
+	background-image: none;
+	-webkit-transition: background 0.3s;
+    transition: background 0.3s;
 }
