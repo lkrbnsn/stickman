@@ -1,7 +1,9 @@
-var stickmanWindow = Math.floor((Math.random() * 23)) + 1;
+var stickmanWindow = Math.floor((Math.random() * 24)) + 1;
+console.log(stickmanWindow);
 
-function clickFunction(windowNumber) {
-
+function clickFunction(windowNumber)
+{
+    console.log("Start function!");
 	var allWindows = document.getElementsByClassName("win");
 	// Sets them all to black
 	for (i = 0; i < allWindows.length; i++)
@@ -19,34 +21,38 @@ function clickFunction(windowNumber) {
 		allWindows[stickmanWindow-1].style.backgroundImage="url('img/man2.png')";
 		document.getElementById("demo").innerHTML = "Success!";
     }
-    // Move the stickman
+    
+    // Maybe flash, move the stickman.
     else
     {
     	var randomVar = Math.random();
     	console.log(randomVar);
+
+        // Maybe flash the stickman.
     	if (randomVar > 0.7)
     	{
     		console.log("hello");
             console.log(stickmanWindow);
     		allWindows[stickmanWindow-1].style.background='#e6e65c';
     		allWindows[stickmanWindow-1].style.backgroundImage="url('img/man2.png')";
-            // pauseComp(500);
-            // allWindows[stickmanWindow-1].style.background='#000';
-            // allWindows[stickmanWindow-1].style.backgroundImage="none";
-    		if(randomVar > 0.85)
-    			stickmanWindow = stickmanWindow + 1;
-    		else
-    			stickmanWindow = stickmanWindow - 1
     	}
+
+        // Wait, then turn off flash and move stickman.
+        setTimeout(function()
+        {
+            allWindows[stickmanWindow-1].style.background='#000';
+            allWindows[stickmanWindow-1].style.backgroundImage="none";
+            console.log("waited");
+            if(randomVar > 0.85)
+                if(stickmanWindow == 24)
+                    stickmanWindow = 23;
+                else
+                    stickmanWindow = stickmanWindow + 1;
+            else
+                if (stickmanWindow == 1)
+                    stickmanWindow == 2;
+                else
+                    stickmanWindow = stickmanWindow - 1;
+        }, 500)
     }
-}
-
-// Function to pause
-function pauseComp(millis)
-{
-var date = new Date();
-var curDate = null;
-
-do { curDate = new Date(); }
-while(curDate-date < millis);
 }
