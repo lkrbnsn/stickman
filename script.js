@@ -1,6 +1,22 @@
 var stickmanWindow = Math.floor((Math.random() * 24)) + 1;
 console.log(stickmanWindow);
+var success = 0;
+var difference;
+var startTime;
 
+function timer()
+{
+    var allWindows = document.getElementsByClassName("win");
+    // Sets them all clickable
+    for (i = 0; i < allWindows.length; i++)
+    { 
+        allWindows[i].style.cursor="pointer";
+    }
+    startTime = (new Date()).getTime();
+    console.log(startTime);
+}
+
+// Happens every time a window is clicked
 function clickFunction(windowNumber)
 {
     console.log("Start function!");
@@ -13,13 +29,16 @@ function clickFunction(windowNumber)
 
 	// Sets the clicked one to yellow
 	allWindows[windowNumber-1].style.background='#e6e65c';
-    document.getElementById("demo").innerHTML = "You clicked window " + windowNumber;
 
     // If the clicked one is correct
     if(windowNumber == stickmanWindow)
     {
 		allWindows[stickmanWindow-1].style.backgroundImage="url('img/man2.png')";
-		document.getElementById("demo").innerHTML = "Success!";
+        var finishTime = (new Date()).getTime();
+        var time = finishTime - startTime;
+        time = time/1000;
+		document.getElementById("result").innerHTML = "You found him in " + time + " seconds";
+        success = 1;
     }
     
     // Maybe flash, move the stickman.

@@ -1,16 +1,15 @@
-.building
+body
+{
+	margin: 0px;
+	margin-top:0px;
+}
+
+#building
 {
 	width: 20em;
 	margin-left: auto;
 	margin-right: auto;
 	background: #484840;
-}
-
-p, h1
-{
-	text-align: center;
-	font-family: sans-serif;
-	font-weight: 100;
 }
 
 table
@@ -19,10 +18,8 @@ table
 	margin-right: auto;
 }
 
-
 .win
 {
-	cursor: pointer;
 
 	padding: 2em;
 	margin-right: 0.2em;
@@ -33,4 +30,55 @@ table
 	background-image: none;
 /*	-webkit-transition: background 0.3s;
     transition: background 0.3s;*/
+}
+
+#base
+{
+	width: 24em;
+	height: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	background: #484840;
+}
+
+#grass
+{
+	margin-top: -1em;
+	width: 100%;
+	background-color: #7CFC00;
+}
+
+#sky
+{
+	background-color: #7EC0EE;
+}
+
+.btn
+{
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	border-radius: 10px;
+	font-family: sans-serif;
+	margin: auto;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	border: none;
+	display:block;
+	margin: 0 auto;
+}
+
+.btn:hover
+{
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+}
+
+.btn:active
+{
+	background-image: linear-gradient(to top, #3498db, #2980b9);
+}
+
+p, h1
+{
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: 100;
 }
